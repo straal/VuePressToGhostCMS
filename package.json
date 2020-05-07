@@ -1,0 +1,34 @@
+{
+  "name": "vuepresstoghostcms",
+  "version": "1.0.0",
+  "description": "Vuepress to GhostCMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/straal/VuePressToGhostCMS.git"
+  },
+  "keywords": [
+    "vue",
+    "vuepress",
+    "ghost",
+    "rxjs"
+  ],
+  "author": "Mariusz Witkowski",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/straal/VuePressToGhostCMS/issues"
+  },
+  "homepage": "https://github.com/straal/VuePressToGhostCMS#readme",
+  "dependencies": {
+    "@tryghost/html-to-mobiledoc": "^0.7.0",
+    "bson-objectid": "^1.3.0",
+    "fs-extra": "^9.0.0",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "rxjs": "^6.5.5",
+    "showdown": "^1.9.1"
+  }
+}
