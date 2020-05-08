@@ -9,9 +9,9 @@
 
 # VuePressToGhostCMS
 
-> Utility script to convert [VuePress](https://vuepress.vuejs.org/) markdowns to export file in [ghost](https://ghost.org/) format.
+> Utility to convert [VuePress](https://vuepress.vuejs.org/) Markdown files to an dump file in [ghost](https://ghost.org/) format.
 
-> The beginning of creating this script was to restore ghost posts from generated markdown files that were created using the script from the blog [Working With VuePress](https://ghost.org/docs/api/v3/vuepress/)
+> The solution is inspired by [Working With VuePress article](https://ghost.org/docs/api/v3/vuepress/) and provides the reverse conversion to export `*.md` files into *Ghost CMS* backup file.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -20,7 +20,7 @@
 
 ## Installation
 
-Install npm packages
+Install npm packages:
 
 ```shell
 npm install
@@ -28,15 +28,12 @@ npm install
 
 ## Usage
 
-Change variable `MARKDOWNS_DIRECTORY_PATH` to your directory with markdowns.
-
-run command:
+Change variable `MARKDOWNS_DIRECTORY_PATH` in `src/createExportJSONFromMdFiles.js` file to the directory with your Markdown pages
+Run the command below in the root directory to generate the output export.json file:
 
 ```bash
 npm run generate
 ```
-
-That will generate `export.json` file in root directory
 
 ## Support
 
