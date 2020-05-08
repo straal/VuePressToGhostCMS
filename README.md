@@ -10,7 +10,8 @@
 # VuePressToGhostCMS
 
 > Utility script to convert [VuePress](https://vuepress.vuejs.org/) markdowns to export file in [ghost](https://ghost.org/) format.
-> A brilliant payment solution for disruptive businesses.
+
+> The beginning of creating this script was to restore ghost posts from generated markdown files that were created using the script from the blog [Working With VuePress](https://ghost.org/docs/api/v3/vuepress/)
 
 - [Installation](#installation)
 - [Usage](#usage)
