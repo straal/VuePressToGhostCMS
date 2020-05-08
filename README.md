@@ -14,7 +14,6 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [`sendEncrypted` method](#sendencrypted-method)
 - [Support](#support)
 - [License](#license)
 
