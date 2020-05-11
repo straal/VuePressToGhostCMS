@@ -4,7 +4,7 @@
   "description": "Vuepress to GhostCMS",
   "main": "index.js",
   "scripts": {
-    "generate": "node src/createExportJSONFromMdFiles.js"
+    "generate": "node src/convertMDToGhostBackup.js"
   },
   "repository": {
     "type": "git",

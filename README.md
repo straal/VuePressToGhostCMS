@@ -28,8 +28,9 @@ npm install
 
 ## Usage
 
-Change variable `MARKDOWNS_DIRECTORY_PATH` in `src/createExportJSONFromMdFiles.js` file to the directory with your Markdown pages
-Run the command below in the root directory to generate the output export.json file:
+Open `src/convertMDToGhostBackup.js` file and set variable `MARKDOWN_DIRECTORY_PATH` to the directory with your Markdown pages
+
+Use the following command to generate the output *export.json* file:
 
 ```bash
 npm run generate

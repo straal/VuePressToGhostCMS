@@ -16,13 +16,13 @@ const {
 
 const L = require("lodash");
 
-const MARKDOWNS_DIRECTORY_PATH = "example"
+const MARKDOWN_DIRECTORY_PATH = "example"
 
 const showdownConverter = new showdown.Converter({
   ghCompatibleHeaderId: true,
 });
 
-const getGhostDataFromFile = async (filePath) => {
+const extractData = async (filePath) => {
   const fileBuffer = await fs.readFile(filePath);
   console.time(`Get data from file ${filePath} in`);
   const fileContent = fileBuffer.toString("utf8");
@@ -108,7 +108,7 @@ const allPostsAccumulator = {
   posts_tags: [],
 };
 
-const exportJsonMapper = (allData) => ({
+const dumpConverter = (allData) => ({
   db: [
     {
       meta: {
@@ -120,28 +120,28 @@ const exportJsonMapper = (allData) => ({
   ],
 });
 
-const saveExportJsonToFile = (exportJson) =>
+const createBackupFile = (convertedDump) =>
   fs.writeFile(
     "export.json",
-    JSON.stringify(exportJson, null, 2)
+    JSON.stringify(convertedDump, null, 2)
   );
 
-const createExportJSONFromMdFiles = async function () {
+const convertMDToGhostBackup = async function () {
   console.info("Start generating file to import ghost file");
-  await from(fs.readdir(MARKDOWNS_DIRECTORY_PATH))
+  await from(fs.readdir(MARKDOWN_DIRECTORY_PATH))
     .pipe(
       tap(() => console.time("Export file saved in")),
       mergeAll(),
       filter(markdownComparator),
-      map(directoryInjector(MARKDOWNS_DIRECTORY_PATH)),
-      mergeMap(getGhostDataFromFile),
+      map(directoryInjector(MARKDOWN_DIRECTORY_PATH)),
+      mergeMap(extractData),
       filter(hasIdComparator),
       reduce(allPostsReducer, allPostsAccumulator),
-      map(exportJsonMapper),
-      mergeMap(saveExportJsonToFile),
+      map(dumpConverter),
+      mergeMap(createBackupFile),
       tap(() => console.timeEnd("Export file saved in"))
     )
     .toPromise();
 };
 
-createExportJSONFromMdFiles()
+convertMDToGhostBackup()
