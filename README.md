@@ -9,7 +9,7 @@
 
 # VuePressToGhostCMS
 
-> Utility to convert [VuePress](https://vuepress.vuejs.org/) Markdown files to an dump file in [ghost](https://ghost.org/) format.
+> Utility to convert [VuePress](https://vuepress.vuejs.org/) Markdown files to a dump file in [ghost](https://ghost.org/) format.
 
 > The solution is inspired by [Working With VuePress article](https://ghost.org/docs/api/v3/vuepress/) and provides the reverse conversion to export `*.md` files into *Ghost CMS* backup file.
 
